@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Nav from "./components/Nav/index.js";
-import Saved from "./components/Saved";
-import Search from "./components/Search";
-import Jumbotron from "./components/Jumbotron";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Saved from "./components/Saved/index.js";
+import Search from "./components/Search/index.js";
+import Jumbotron from "./components/Jumbotron/index.js";
+import Books from "./pages/Books.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
                     <div className="App">
                          <Nav />
                          <Jumbotron />
+                         <Books />
                          <Switch>
                               <Route exact path="/" component={Search} />
                               <Route exact path="/saved" component={Saved} />
