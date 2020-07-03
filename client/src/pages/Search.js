@@ -9,10 +9,6 @@ class Books extends Component {
           userInput: ""
      };
 
-     componentDidMount() {
-          this.loadBooks("harry+potter");
-     }
-
      loadBooks = (bookSearch) => {
           API.searchBooks(bookSearch, process.env.REACT_APP_GOOGLE_APIKEY)
                .then(res => {

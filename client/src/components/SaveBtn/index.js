@@ -14,6 +14,7 @@ class ViewBtn extends Component {
           API.saveBook(bookObject)
                .then(res => {
                     console.log("Book was saved sucessfully.");
+                    this.saveBtn.setAttribute("disabled", "disabled");
                })
                .catch(err => console.log(err));
      }
@@ -25,6 +26,9 @@ class ViewBtn extends Component {
                     id="saveBtn"
                     type="button"
                     onClick={this.onClickSaveBtnHandler}
+                    ref={saveBtn => {
+                         this.saveBtn = saveBtn;
+                    }}
                >Save</button>
           );
      }

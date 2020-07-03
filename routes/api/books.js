@@ -20,7 +20,6 @@ router.route("/")
 
 router.route("/:id")
      .delete(function (req, res) {
-          console.log(req.params.id)
           db.Book.findById({ _id: req.params.id })
                .then(dbModel => dbModel.remove())
                .then(dbModel => res.json(dbModel))

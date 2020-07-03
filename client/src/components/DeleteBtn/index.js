@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import API from "../../utils/API.js";
+import { withRouter } from "react-router-dom";
 
 class DeleteBtn extends Component {
      onClickDeleteBtnHandler = (event) => {
-          console.log("Delete button was pushed and the value being sent was --- " + event.target.value);
           API.deleteBook(event.target.value)
                .then(res => {
                     console.log("Book was deleted sucessfully.");
                     console.log(res.data);
+                    this.props.loadBooks();
                })
                .catch(err => console.log(err));
      }
@@ -25,4 +26,4 @@ class DeleteBtn extends Component {
      }
 }
 
-export default DeleteBtn;
+export default withRouter(DeleteBtn);

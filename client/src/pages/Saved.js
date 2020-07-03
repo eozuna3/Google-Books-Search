@@ -4,8 +4,13 @@ import ViewBtn from "../components/ViewBtn/index.js";
 import DeleteBtn from "../components/DeleteBtn/index.js";
 
 class Books extends Component {
-     state = {
-          bookArray: [],
+
+     constructor(props) {
+          super(props);     
+          this.state = {
+               bookArray: []
+          }
+          this.loadBooks = this.loadBooks.bind(this);
      };
 
      componentDidMount() {
@@ -34,7 +39,7 @@ class Books extends Component {
                                                        <h5 className="float-left">{book.title}</h5>
                                                   </div>
                                                   <div className="col-md-4">
-                                                       <DeleteBtn bookID={book._id} />
+                                                       <DeleteBtn bookID={book._id} loadbooks={this.loadBooks()}/>
                                                        <ViewBtn bookLink={book.link} />
                                                   </div>
                                              </div>
