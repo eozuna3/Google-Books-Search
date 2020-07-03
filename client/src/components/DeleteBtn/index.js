@@ -16,7 +16,7 @@ class DeleteBtn extends Component {
      render() {
           return (
                <button
-                    className="float-right btn btn-success"
+                    className="float-right btn btn-danger"
                     id="deleteBtn"
                     type="button"
                     value={this.props.bookID}
