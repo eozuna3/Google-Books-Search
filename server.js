@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://playerdb:Eo30239@ds153566.mlab.com:53566/heroku_1hwx2g8h" || "mongodb://localhost/googlebooks", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
